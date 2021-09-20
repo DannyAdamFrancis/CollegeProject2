@@ -6,6 +6,7 @@ public class PlayerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool isGrounded;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -14,6 +15,7 @@ public class PlayerScript : MonoBehaviour
     }
 
     // Update is called once per frame
+    
     void Update()
     {
         DoJump();
@@ -63,8 +65,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-
-    
+              
     private void OnCollisionStay2D(Collision2D collision)
     {
         isGrounded = true;
