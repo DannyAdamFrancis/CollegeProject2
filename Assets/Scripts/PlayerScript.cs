@@ -77,7 +77,7 @@ public class PlayerScript : MonoBehaviour
         rb.velocity = velocity;
 
         //changes the player direction when "a" or "d" are pressed
-        if( velocity.x <0.5f)
+        if( velocity.x <-0.5f)
         {
             DoFaceLeft(true);
         }
