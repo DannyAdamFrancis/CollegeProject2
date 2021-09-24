@@ -20,7 +20,7 @@ public class PlayerScript : MonoBehaviour
     {
         DoJump();
         DoMove();
-        print(isGrounded);
+       print(isGrounded);
     }
 
     void DoFaceLeft( bool faceLeft)
