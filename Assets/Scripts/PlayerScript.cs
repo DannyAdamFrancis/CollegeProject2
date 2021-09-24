@@ -23,6 +23,20 @@ public class PlayerScript : MonoBehaviour
         print(isGrounded);
     }
 
+    void DoFaceLeft( bool faceLeft)
+    {
+        if( faceLeft  == true)
+        {
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
+        }
+        else
+        {
+            transform.localRotation = Quaternion.Euler(0, 0, 0);
+        }
+    }
+        
+           
+
     void DoJump()
     {
         Vector2 velocity = rb.velocity;
@@ -52,15 +66,26 @@ public class PlayerScript : MonoBehaviour
         // check for moving left
         if (Input.GetKey("a"))
         {
-            velocity.x = -7;
+            velocity.x = -5;
         }
 
         // check for moving right
         if (Input.GetKey("d"))
         {
-            velocity.x = 7;
+            velocity.x = 5;
         }
         rb.velocity = velocity;
+
+        //changes the player direction when "a" or "d" are pressed
+        if( velocity.x <0.5f)
+        {
+            DoFaceLeft(true);
+        }
+        if(velocity.x > 0.5f)
+        {
+            DoFaceLeft(false);
+        }
+
 
 
     }
