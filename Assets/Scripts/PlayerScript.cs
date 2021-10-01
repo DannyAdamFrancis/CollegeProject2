@@ -21,10 +21,11 @@ public class PlayerScript : MonoBehaviour
     {
         DoJump();
         DoMove();
-        
+        DoYell();
+
         // this sets the variable to 10
         // From our condition we set up above we said that if "speed">5 then set the animation to "player_walk"
-        
+
 
     }
 
@@ -40,7 +41,7 @@ public class PlayerScript : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
 
-    }       
+    }
 
     void DoJump()
     {
@@ -82,11 +83,11 @@ public class PlayerScript : MonoBehaviour
         rb.velocity = velocity;
 
         //changes the player direction when "a" or "d" are pressed
-        if( velocity.x <-0.5f)
+        if (velocity.x < -0.5f)
         {
             DoFaceLeft(true);
         }
-        if(velocity.x > 0.5f)
+        if (velocity.x > 0.5f)
         {
             DoFaceLeft(false);
         }
@@ -101,7 +102,7 @@ public class PlayerScript : MonoBehaviour
         }
 
         print("player x=" + velocity.x);
-        
+
         if (velocity.y == 0)
         {
             anim.SetBool("jumping", false);
@@ -114,7 +115,7 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-              
+
     private void OnCollisionStay2D(Collision2D collision)
     {
         isGrounded = true;
@@ -123,5 +124,11 @@ public class PlayerScript : MonoBehaviour
     {
         isGrounded = false;
     }
+    void DoYell()
+    {
+        print("Full speed ahead");
+    }
+
+
 }
 
