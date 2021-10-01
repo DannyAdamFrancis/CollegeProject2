@@ -6,26 +6,32 @@ public class PlayerScript : MonoBehaviour
 {
     private Rigidbody2D rb;
     private bool isGrounded;
-    
+    private Animator anim;
 
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    
+
     void Update()
     {
         DoJump();
         DoMove();
-       print(isGrounded);
+        
+        // this sets the variable to 10
+        // From our condition we set up above we said that if "speed">5 then set the animation to "player_walk"
+        
+
     }
 
-    void DoFaceLeft( bool faceLeft)
+
+    void DoFaceLeft(bool faceLeft)
     {
-        if( faceLeft  == true)
+        if (faceLeft == true)
         {
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
@@ -33,9 +39,8 @@ public class PlayerScript : MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
-    }
-        
-           
+
+    }       
 
     void DoJump()
     {
@@ -86,6 +91,25 @@ public class PlayerScript : MonoBehaviour
             DoFaceLeft(false);
         }
 
+        if (velocity.x == 0)
+        {
+            anim.SetBool("walk", false);
+        }
+        else
+        {
+            anim.SetBool("walk", true);
+        }
+
+        print("player x=" + velocity.x);
+        
+        if (velocity.y == 0)
+        {
+            anim.SetBool("jumping", false);
+        }
+        else
+        {
+            anim.SetBool("jumping", true);
+        }
 
 
     }
