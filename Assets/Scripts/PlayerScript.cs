@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerScript : MonoBehaviour
+
 {
+  
     private Rigidbody2D rb;
     private bool isGrounded;
     private Animator anim;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +26,7 @@ public class PlayerScript : MonoBehaviour
         DoJump();
         DoMove();
         DoYell();
+        
 
         // this sets the variable to 10
         // From our condition we set up above we said that if "speed">5 then set the animation to "player_walk"
@@ -30,18 +35,7 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-    void DoFaceLeft(bool faceLeft)
-    {
-        if (faceLeft == true)
-        {
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-        }
-        else
-        {
-            transform.localRotation = Quaternion.Euler(0, 0, 0);
-        }
-
-    }
+   
 
     void DoJump()
     {
@@ -53,7 +47,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (velocity.y < 0.01f)
             {
-                velocity.y = 5f;    // give the player a velocity of 5 in the y axis
+                velocity.y = 7f;    // give the player a velocity of 5 in the y axis
 
             }
         }
@@ -85,11 +79,12 @@ public class PlayerScript : MonoBehaviour
         //changes the player direction when "a" or "d" are pressed
         if (velocity.x < -0.5f)
         {
-            DoFaceLeft(true);
+            //DoFaceLeft(true);
+            Helper.FlipSprite(gameObject, true);
         }
         if (velocity.x > 0.5f)
         {
-            DoFaceLeft(false);
+            Helper.FlipSprite(gameObject, false);
         }
 
         if (velocity.x == 0)
@@ -129,6 +124,7 @@ public class PlayerScript : MonoBehaviour
         print("Full speed ahead");
     }
 
+  
 
 }
 
