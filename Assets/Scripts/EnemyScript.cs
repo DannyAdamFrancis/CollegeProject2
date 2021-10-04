@@ -10,17 +10,16 @@ public class EnemyScript : MonoBehaviour
     public GameObject player;
     
 
-    // Start is called before the first frame update
+   
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+   
     void Update()
     {
-        //I want to make the enemy look at the player.
-        //I want to make the enemy walk.
+        
 
         DoLookAtPlayer();
 

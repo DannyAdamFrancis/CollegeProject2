@@ -17,21 +17,11 @@ public class Helper : MonoBehaviour
 			obj.transform.localRotation = Quaternion.Euler(0, 0, 0);
 		}
 
-
-	
-		/*public static void FollowPlayer(player.transform.position.x, float followPlayer)
-    
-		if(followPlayer)
-		{
-			//enemy will look at the player
-		}
-        else
-        {
-			//enemy will look the othr way
-        }*/
+		
 
 
     }
+	
 
 		
 }
