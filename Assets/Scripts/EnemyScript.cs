@@ -22,7 +22,7 @@ public class EnemyScript : MonoBehaviour
         
 
         DoLookAtPlayer();
-
+        EnemyMove();
 
 
     }
@@ -32,7 +32,7 @@ public class EnemyScript : MonoBehaviour
     {
         float px = player.transform.position.x;
         float ex = transform.position.x;
-
+        //helper script
         if (ex > px)
         {
             Helper.FlipSprite(gameObject, true);
@@ -41,10 +41,13 @@ public class EnemyScript : MonoBehaviour
         {
             Helper.FlipSprite(gameObject, false);
         }
-    
-
-    
+                
        
+    }
+    
+    void EnemyMove()    
+    {
+
     }
 
                  

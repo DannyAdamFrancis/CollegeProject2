@@ -47,7 +47,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (velocity.y < 0.01f)
             {
-                velocity.y = 7f;    // give the player a velocity of 5 in the y axis
+                velocity.y = 7f;  
 
             }
         }
@@ -60,26 +60,26 @@ public class PlayerScript : MonoBehaviour
     {
         Vector2 velocity = rb.velocity;
 
-        // stop player sliding when not pressing left or right
+       
         velocity.x = 0;
 
-        // check for moving left
+       // move left with "a"
         if (Input.GetKey("a"))
         {
             velocity.x = -5;
         }
 
-        // check for moving right
+       //move right with "d"
         if (Input.GetKey("d"))
         {
             velocity.x = 5;
         }
         rb.velocity = velocity;
 
-        //changes the player direction when "a" or "d" are pressed
+       //flips sprite
         if (velocity.x < -0.5f)
         {
-            //DoFaceLeft(true);
+            
             Helper.FlipSprite(gameObject, true);
         }
         if (velocity.x > 0.5f)
