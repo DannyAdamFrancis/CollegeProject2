@@ -10,6 +10,7 @@ public class PlayerScript : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded;
     private Animator anim;
+    public GameObject bulletPrefab;
     
 
     // Start is called before the first frame update
@@ -26,7 +27,7 @@ public class PlayerScript : MonoBehaviour
         DoJump();
         DoMove();
         DoYell();
-        
+        DoShoot();
 
         // this sets the variable to 10
         // From our condition we set up above we said that if "speed">5 then set the animation to "player_walk"
@@ -109,7 +110,22 @@ public class PlayerScript : MonoBehaviour
 
 
     }
+    void DoShoot()
+    {
+        if (Input.GetKey("e"))
+        {
+            float x = transform.position.x;
+            float y = transform.position.y;
+            Instantiate(bulletPrefab, new Vector3( x,y, 0), Quaternion.identity);
 
+            // make bullet face correct direction
+
+            // make bullet move in the direction the player is facing
+
+            // have a go at making the bullet collide with something
+
+        }
+    }
 
     private void OnCollisionStay2D(Collision2D collision)
     {
