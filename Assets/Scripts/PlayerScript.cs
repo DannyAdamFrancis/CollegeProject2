@@ -13,16 +13,13 @@ public class PlayerScript : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
 
-
-    // Start is called before the first frame update
+       
     void Start()
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
-
-    // Update is called once per frame
-
+    
     void Update()
     {
         DoJump();
@@ -30,14 +27,8 @@ public class PlayerScript : MonoBehaviour
         DoYell();
         DoShoot();
 
-        // this sets the variable to 10
-        // From our condition we set up above we said that if "speed">5 then set the animation to "player_walk"
-
-
+        
     }
-
-
-
 
     void DoJump()
     {
