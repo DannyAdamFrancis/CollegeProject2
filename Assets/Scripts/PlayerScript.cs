@@ -6,12 +6,13 @@ using UnityEngine;
 public class PlayerScript : MonoBehaviour
 
 {
-  
+
     private Rigidbody2D rb;
     private bool isGrounded;
     private Animator anim;
     public GameObject bulletPrefab;
-    
+    public Transform firePoint;
+
 
     // Start is called before the first frame update
     void Start()
@@ -36,7 +37,7 @@ public class PlayerScript : MonoBehaviour
     }
 
 
-   
+
 
     void DoJump()
     {
@@ -48,7 +49,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (velocity.y < 0.01f)
             {
-                velocity.y = 7f;  
+                velocity.y = 7f;
 
             }
         }
@@ -61,26 +62,26 @@ public class PlayerScript : MonoBehaviour
     {
         Vector2 velocity = rb.velocity;
 
-       
+
         velocity.x = 0;
 
-       // move left with "a"
+        // move left with "a"
         if (Input.GetKey("a"))
         {
             velocity.x = -5;
         }
 
-       //move right with "d"
+        //move right with "d"
         if (Input.GetKey("d"))
         {
             velocity.x = 5;
         }
         rb.velocity = velocity;
 
-       //flips sprite
+        //flips sprite
         if (velocity.x < -0.5f)
         {
-            
+
             Helper.FlipSprite(gameObject, true);
         }
         if (velocity.x > 0.5f)
@@ -112,11 +113,14 @@ public class PlayerScript : MonoBehaviour
     }
     void DoShoot()
     {
-        if (Input.GetKey("e"))
+        if (Input.GetButton("Fire1"))
         {
             float x = transform.position.x;
             float y = transform.position.y;
-            Instantiate(bulletPrefab, new Vector3( x,y, 0), Quaternion.identity);
+
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+
+            rb.velocity = new Vector2(x, 0);
 
             // make bullet face correct direction
 
@@ -137,10 +141,10 @@ public class PlayerScript : MonoBehaviour
     }
     void DoYell()
     {
-        print("Full speed ahead");
+        print("help");
     }
 
-  
+
 
 }
 
