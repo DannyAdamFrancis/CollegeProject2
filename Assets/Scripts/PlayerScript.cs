@@ -40,7 +40,7 @@ public class PlayerScript : MonoBehaviour
         {
             if (velocity.y < 0.01f)
             {
-                velocity.y = 7f;
+                velocity.y = 10f;
 
             }
         }
@@ -59,13 +59,13 @@ public class PlayerScript : MonoBehaviour
         // move left with "a"
         if (Input.GetKey("a"))
         {
-            velocity.x = -5;
+            velocity.x = -10;
         }
 
         //move right with "d"
         if (Input.GetKey("d"))
         {
-            velocity.x = 5;
+            velocity.x = 10;
         }
         rb.velocity = velocity;
 
@@ -104,7 +104,7 @@ public class PlayerScript : MonoBehaviour
     }
     void DoShoot()
     {
-        if (Input.GetKey("e"))
+        if (Input.GetButton("Fire1"))
         {
            
 
