@@ -104,14 +104,15 @@ public class PlayerScript : MonoBehaviour
     }
     void DoShoot()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetKey("e"))
         {
-            float x = transform.position.x;
-            float y = transform.position.y;
+           
 
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            GameObject newObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
-            rb.velocity = new Vector2(x, 0);
+            Rigidbody2D newRb = GetComponent<Rigidbody2D>();
+
+            newRb.velocity = new Vector2(5, 0); // move the new object in the x axis
 
             // make bullet face correct direction
 
