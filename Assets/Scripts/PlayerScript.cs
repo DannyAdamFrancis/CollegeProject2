@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Globals;
 
 
 public class PlayerScript : MonoBehaviour
@@ -12,7 +13,8 @@ public class PlayerScript : MonoBehaviour
     private Animator anim;
     public GameObject bulletPrefab;
     public Transform firePoint;
-
+    public GameObject player;
+    
        
     void Start()
     {
@@ -24,10 +26,8 @@ public class PlayerScript : MonoBehaviour
     {
         DoJump();
         DoMove();
-        DoYell();
         DoShoot();
 
-        
     }
 
     void DoJump()
@@ -38,7 +38,7 @@ public class PlayerScript : MonoBehaviour
         if (Input.GetKey("space") && (isGrounded == true))
 
         {
-            if (velocity.y < 0.01f)
+            if (velocity.y < 0.00f)
             {
                 velocity.y = 10f;
 
@@ -73,11 +73,11 @@ public class PlayerScript : MonoBehaviour
         if (velocity.x < -0.5f)
         {
 
-            Helper.FlipSprite(gameObject, true);
+            Helper.FlipSprite(gameObject, Left);
         }
         if (velocity.x > 0.5f)
         {
-            Helper.FlipSprite(gameObject, false);
+            Helper.FlipSprite(gameObject, Right);
         }
 
         if (velocity.x == 0)
@@ -89,38 +89,38 @@ public class PlayerScript : MonoBehaviour
             anim.SetBool("walk", true);
         }
 
-        print("player x=" + velocity.x);
+       
 
-        if (velocity.y == 0)
+        /*if (velocity.y == 0)
         {
             anim.SetBool("jumping", false);
         }
         else
         {
             anim.SetBool("jumping", true);
-        }
+        }*/
 
 
     }
     void DoShoot()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
-           
+            float x = transform.position.x;
+            float y = transform.position.y;
 
-            GameObject newObject = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            // get direction of player
+            Helper.GetObjectDir(player);
+            Helper.MakeBullet(bulletPrefab, x, y, 6, 0);
 
-            Rigidbody2D newRb = GetComponent<Rigidbody2D>();
 
-            newRb.velocity = new Vector2(5, 0); // move the new object in the x axis
+            
 
-            // make bullet face correct direction
+            
+            
+        }      
 
-            // make bullet move in the direction the player is facing
-
-            // have a go at making the bullet collide with something
-
-        }
+                                
     }
 
     private void OnCollisionStay2D(Collision2D collision)
@@ -131,10 +131,8 @@ public class PlayerScript : MonoBehaviour
     {
         isGrounded = false;
     }
-    void DoYell()
-    {
-        print("help");
-    }
+    
+    
 
 
 

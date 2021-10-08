@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Globals;
 
 
 public class EnemyScript : MonoBehaviour
@@ -35,11 +36,11 @@ public class EnemyScript : MonoBehaviour
         //helper script
         if (ex > px)
         {
-            Helper.FlipSprite(gameObject, true);
+            Helper.FlipSprite(gameObject, Left);
         }
         else
         {
-            Helper.FlipSprite(gameObject, false);
+            Helper.FlipSprite(gameObject, Right);
         }
                 
        

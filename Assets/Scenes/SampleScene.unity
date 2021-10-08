@@ -158,6 +158,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1634927703}
   firePoint: {fileID: 1661907101}
+  player: {fileID: 36036276}
 --- !u!50 &36036278
 Rigidbody2D:
   serializedVersion: 4
@@ -265,7 +266,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36036276}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.1, y: -0.174, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 1661907101}
@@ -801,7 +802,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 36036281}
   offset: {x: 7.45, y: 9, z: -10}
-  smoothFactor: 0
+  smoothFactor: 2
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -812,7 +813,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.34242615, g: 0.6313547, b: 0.764151, a: 0}
+  m_BackGroundColor: {r: 0.114498034, g: 0.57255864, b: 0.7830189, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1281,11 +1282,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814438288744613332, guid: d8451680dd4b1d047aaf04ed5b15f014, type: 3}
       propertyPath: m_Mass
-      value: 0.15842053
+      value: 0.63368213
+      objectReference: {fileID: 0}
+    - target: {fileID: 5814438288744613332, guid: d8451680dd4b1d047aaf04ed5b15f014, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5814438288744613332, guid: d8451680dd4b1d047aaf04ed5b15f014, type: 3}
       propertyPath: m_Constraints
-      value: 0
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5814438288744613332, guid: d8451680dd4b1d047aaf04ed5b15f014, type: 3}
       propertyPath: m_UseAutoMass
@@ -1293,7 +1298,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5814438288744613332, guid: d8451680dd4b1d047aaf04ed5b15f014, type: 3}
       propertyPath: m_GravityScale
-      value: 1
+      value: 0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d8451680dd4b1d047aaf04ed5b15f014, type: 3}
@@ -2978,7 +2983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002570254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.927145, y: -3.36, z: 0}
+  m_LocalPosition: {x: 20.927145, y: -3.13, z: 0}
   m_LocalScale: {x: 5.1436796, y: 5.3, z: 2.8494}
   m_Children: []
   m_Father: {fileID: 0}
