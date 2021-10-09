@@ -104,7 +104,7 @@ public class PlayerScript : MonoBehaviour
     }
     void DoShoot()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             float x = transform.position.x;
             float y = transform.position.y;

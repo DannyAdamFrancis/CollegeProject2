@@ -153,7 +153,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 36036276}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bf714cfcd1872240b793b87cba50648, type: 3}
+  m_Script: {fileID: 11500000, guid: 06414e3663a074441951c370e99f66c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 1634927703}
@@ -797,12 +797,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 519420028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f215e47480b47f4f8f409d8e896778d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2abbc64de97efab4ca58a8a611eb0983, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 36036281}
-  offset: {x: 7.45, y: 9, z: -10}
-  smoothFactor: 2
+  offset: {x: 1.64, y: 8.63, z: -28.35}
+  smoothFactor: 0
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -2455,7 +2455,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1883582093}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29523daae3e26404e8fdba91319d0180, type: 3}
+  m_Script: {fileID: 11500000, guid: d421b859b6cccd145b3aa306cdb53073, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 36036276}
@@ -2983,7 +2983,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2002570254}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 20.927145, y: -3.13, z: 0}
+  m_LocalPosition: {x: 20.927145, y: -3.13, z: 0.24}
   m_LocalScale: {x: 5.1436796, y: 5.3, z: 2.8494}
   m_Children: []
   m_Father: {fileID: 0}
